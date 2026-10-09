@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<title>Operação de Mina | Serabi Gold</title>
+<style>
+html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#0d1726}body{display:flex;align-items:center;justify-content:center}img{width:100vw;height:100vh;object-fit:contain;display:block}#aviso{position:fixed;bottom:12px;left:12px;color:#fff;background:#a22;padding:8px 12px;font:14px Arial;display:none}
+</style>
+</head>
+<body>
+<img id="painel" alt="Painel Operação de Mina">
+<div id="aviso">Falha ao carregar imagem. Tentando novamente…</div>
+<script>
+const imagens=['01_visao_geral.png','02_producao.png','03_produtividade.png','04_perfuracao.png','05_paradas.png','06_supervisores.png'];
+const DURACAO=30000;
+let indice=0, proxima=null;
+const painel=document.getElementById('painel'),aviso=document.getElementById('aviso');
+function mostrar(){
+ const alvo=imagens[indice]+'?v='+Date.now();
+ const teste=new Image();
+ teste.onload=()=>{painel.src=alvo;aviso.style.display='none'};
+ teste.onerror=()=>{aviso.style.display='block'};
+ teste.src=alvo;
+}
+function avancar(){indice=(indice+1)%imagens.length;mostrar()}
+mostrar();
+setInterval(avancar,DURACAO);
+// A cada volta, todas as imagens são solicitadas novamente com URL única para evitar cache da TV.
+</script>
+</body>
+</html>

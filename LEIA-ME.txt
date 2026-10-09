@@ -1,0 +1,8 @@
+PAINEL OPERAÇÃO DE MINA - SERABI GOLD
+
+Publique index.html e os seis arquivos PNG juntos na raiz do novo site.
+Abra o endereço do novo site na TV, em tela cheia.
+Cada imagem permanece por 30 segundos.
+Para atualizar um painel, substitua o PNG correspondente mantendo o mesmo nome.
+A TV busca uma versão nova do arquivo em cada ciclo (a cada 3 minutos por imagem).
+O novo site deve ser separado do Painel de Sondagem.
